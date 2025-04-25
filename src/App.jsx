@@ -44,14 +44,14 @@ const App = () => {
             Proveedor
           </Link>
           <Link href="/user" color="inherit" underline="hover">
-            Users
+            Usuarios
           </Link>
         </Box>
 
 
         <Box>
           <Link href="/log-out" color="inherit" underline="hover">
-            Logout
+            Cerrar sesión
           </Link>
         </Box>
       </Box>
