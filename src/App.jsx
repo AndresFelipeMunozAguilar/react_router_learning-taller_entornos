@@ -3,13 +3,13 @@ import { AppBar, Toolbar, Typography, Box, Button } from '@mui/material';
 import './App.css';
 import { Outlet } from "react-router-dom";
 import { NavLink } from 'react-router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { getAllJSDocTagsOfKind } from 'typescript';
 
 
 const App = () => {
 
-  const defaultButton = 1
+  const defaultButton = 0
   const disabledBttnColor = 'inherit'
 
   // Función para manejar el clic en los botones de navegación
@@ -25,7 +25,16 @@ const App = () => {
    *     3. Usuarios
    *     4. Cerrar sesión
    */
-  const [currentButton, setCurrentButton] = useState(defaultButton);
+  const [currentButton, setCurrentButton] = useState(() => {
+    // Obtener el valor guardado en localStorage al cargar la página
+    const savedButton = localStorage.getItem('currentButton');
+    return savedButton ? parseInt(savedButton, 10) : 1; // Si no hay valor guardado, usar 1 como predeterminado
+  });
+
+  useEffect(() => {
+    // Guardar el valor de currentButton en localStorage cada vez que cambie
+    localStorage.setItem('currentButton', currentButton);
+  }, [currentButton]);
 
 
   return (
