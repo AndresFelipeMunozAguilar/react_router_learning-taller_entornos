@@ -3,6 +3,4 @@ Repositorio creado con el propósito de practicar y profundizar en los conceptos
 
 ### Autor
 Andrés Felipe Muñoz Aguilar - 2210087
-
-#### Grupo
-E1
+**Grupo:** E1
