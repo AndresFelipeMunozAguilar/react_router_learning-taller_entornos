@@ -31,13 +31,13 @@ El proyecto tiene como propósito fundamental la familiarización con el sistema
 ![Panel Principal](https://github.com/user-attachments/assets/7711ef66-35e9-4f67-9f3d-b5fbf3d28b71)
 
 ### Vista de Usuarios
-![Usuarios](https://via.placeholder.com/800x400.png?text=Vista+de+Usuarios)
+![Usuarios](https://github.com/user-attachments/assets/8ea689dd-c74e-4af0-bbfc-27fd80f03218)
 
 ### Vista de Clientes
-![Clientes](https://via.placeholder.com/800x400.png?text=Vista+de+Clientes)
+![Clientes](https://github.com/user-attachments/assets/6bf4389d-3754-4e74-964a-ecddd472443b)
 
 ### Vista de Cierre de Sesión
-![Cierre de Sesión](https://via.placeholder.com/800x400.png?text=Cierre+de+Sesion)
+![Cierre de Sesión](https://github.com/user-attachments/assets/85e7114d-3068-4d7f-ac69-a4c5bed3e485)
 
 ### Autor
 Andrés Felipe Muñoz Aguilar - 2210087 <br/>
