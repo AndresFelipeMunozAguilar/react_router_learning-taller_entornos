@@ -28,7 +28,7 @@ El proyecto tiene como propósito fundamental la familiarización con el sistema
 ## Capturas de Pantalla del Resultado Final
 
 ### Vista del Panel Principal
-![Panel Principal](https://via.placeholder.com/800x400.png?text=Panel+Principal)
+![Panel Principal](https://github.com/user-attachments/assets/7711ef66-35e9-4f67-9f3d-b5fbf3d28b71)
 
 ### Vista de Usuarios
 ![Usuarios](https://via.placeholder.com/800x400.png?text=Vista+de+Usuarios)
