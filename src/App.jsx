@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import { AppBar, Toolbar, Typography, Box, Button } from '@mui/material';
 import './App.css';
 import { Outlet } from "react-router-dom";
 import { NavLink } from 'react-router';
 import { useState, useEffect } from 'react';
-import { getAllJSDocTagsOfKind } from 'typescript';
 
+const AppContext = createContext();
 
 const App = () => {
-
-  const defaultButton = 0
-  const disabledBttnColor = 'inherit'
+  const defaultButton = 0;
+  const disabledBttnColor = 'inherit';
 
   // Función para manejar el clic en los botones de navegación
 
@@ -25,6 +24,7 @@ const App = () => {
    *     3. Usuarios
    *     4. Cerrar sesión
    */
+
   const [currentButton, setCurrentButton] = useState(() => {
     // Obtener el valor guardado en localStorage al cargar la página
     const savedButton = localStorage.getItem('currentButton');
@@ -36,99 +36,97 @@ const App = () => {
     localStorage.setItem('currentButton', currentButton);
   }, [currentButton]);
 
-
   return (
     <>
-      <div>
-        {/* Barra superior */}
-        <AppBar position="static" sx={{ backgroundColor: '#096280' }}>
-          <Toolbar>
-            {/* Logo de React */}
-            <img
-              id="ReactMainLogo"
-              src="/src/assets/react.svg"
-              alt="React Logo"
-              style={{ marginRight: '16px', width: '40px', height: '40px' }}
-            />
-            {/* Título de la aplicación */}
-            <Typography variant="h1" component="div" sx={{ fontSize: '3rem' }}>
-              Admin Panel
-            </Typography>
-          </Toolbar>
-        </AppBar>
-        {/* Barra de navegación */}
-        <Box
-          component="nav"
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            backgroundColor: '#f5f5f5',
-            padding: '8px 16px',
-            marginTop: 0,
-            paddingX: '38px'
-          }}
-        >
-          <Box sx={{ display: 'flex', gap: '16px' }}>
-            <NavLink to="/clients"
-            >
-              <Button
-                variant={currentButton === 1 ? "contained" : "text"}
-                size="small"
-                onClick={() => {
-                  setCurrentButton(1);
-                }}
-
-
-              >
-                Clientes
-              </Button>
-            </NavLink>
-            <NavLink to="/providers" >
-              <Button
-                variant={currentButton === 2 ? "contained" : "text"}
-                size="small"
-                onClick={() => {
-                  setCurrentButton(2);
-                }}
-              >
-                Proveedores
-              </Button>
-            </NavLink>
-            <NavLink to="/users" >
-              <Button
-                variant={currentButton === 3 ? "contained" : "text"}
-                size="small"
-                onClick={() => {
-                  setCurrentButton(3);
-                }}
-              >
-                Usuarios
-              </Button>
-            </NavLink>
+      <AppContext.Provider value={{ setCurrentButton }}>
+        <div>
+          {/* Barra superior */}
+          <AppBar position="static" sx={{ backgroundColor: '#096280' }}>
+            <Toolbar>
+              {/* Logo de React */}
+              <img
+                id="ReactMainLogo"
+                src="/src/assets/react.svg"
+                alt="React Logo"
+                style={{ marginRight: '16px', width: '40px', height: '40px' }}
+              />
+              {/* Título de la aplicación */}
+              <Typography variant="h1" component="div" sx={{ fontSize: '3rem' }}>
+                Admin Panel
+              </Typography>
+            </Toolbar>
+          </AppBar>
+          {/* Barra de navegación */}
+          <Box
+            component="nav"
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              backgroundColor: '#f5f5f5',
+              padding: '8px 16px',
+              marginTop: 0,
+              paddingX: '38px',
+            }}
+          >
+            <Box sx={{ display: 'flex', gap: '16px' }}>
+              <NavLink to="/clients">
+                <Button
+                  variant={currentButton === 1 ? 'contained' : 'text'}
+                  size="small"
+                  onClick={() => {
+                    setCurrentButton(1);
+                  }}
+                >
+                  Clientes
+                </Button>
+              </NavLink>
+              <NavLink to="/providers">
+                <Button
+                  variant={currentButton === 2 ? 'contained' : 'text'}
+                  size="small"
+                  onClick={() => {
+                    setCurrentButton(2);
+                  }}
+                >
+                  Proveedores
+                </Button>
+              </NavLink>
+              <NavLink to="/users">
+                <Button
+                  variant={currentButton === 3 ? 'contained' : 'text'}
+                  size="small"
+                  onClick={() => {
+                    setCurrentButton(3);
+                  }}
+                >
+                  Usuarios
+                </Button>
+              </NavLink>
+            </Box>
+            <Box>
+              <NavLink to="/log-out">
+                <Button
+                  variant={currentButton === 4 ? 'contained' : 'outlined'}
+                  size="small"
+                  color="error"
+                  onClick={() => {
+                    setCurrentButton(4);
+                  }}
+                >
+                  Cerrar sesión
+                </Button>
+              </NavLink>
+            </Box>
           </Box>
-          <Box>
-            <NavLink to="/log-out">
-              <Button
-                variant={currentButton === 4 ? "contained" : "outlined"}
-                size="small"
-                color="error"
-                onClick={() => {
-                  setCurrentButton(4);
-                }}
-              >
-                Cerrar sesión
-              </Button>
-            </NavLink>
-          </Box>
-        </Box>
-      </div>
-
-      <Outlet />
+        </div>
+        <Outlet />
+      </AppContext.Provider>
     </>
   );
 };
 
+export { AppContext };
 export default App;
 
 
