@@ -13,6 +13,9 @@ const Clients = () => {
 
     return (
         <div style={{ margin: '2rem' }}>
+            <Typography variant="h3" gutterBottom>
+                Clientes
+            </Typography>
             <Grid container spacing={4}>
                 {clientsData.map((client, index) => (
                     <Grid item size={{ xs: 12, sm: 6, md: 3 }} key={index}>

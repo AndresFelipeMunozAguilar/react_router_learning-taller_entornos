@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography } from '@mui/material';
 
 const Users = () => {
     const usersData = [
@@ -12,6 +12,9 @@ const Users = () => {
 
     return (
         <div style={{ margin: '2rem' }}>
+            <Typography variant="h3" gutterBottom>
+                Usuarios
+            </Typography>
             <TableContainer component={Paper}>
                 <Table>
                     <TableHead>

@@ -28,10 +28,15 @@ const Logout = () => {
             minHeight="100vh"
             sx={{ margin: '2rem' }}
         >
+            <Box sx={{ width: '100%', textAlign: 'left' }}>
+                <Typography variant="h3" gutterBottom>
+                    Logout
+                </Typography>
+            </Box>
             {!loggedOut ? (
                 <>
                     <Stack spacing={2} direction="column" alignItems="center">
-                        <Typography variant="h3">¿Quieres cerrar la sesión?</Typography>
+                        <Typography variant="h4">¿Quieres cerrar la sesión?</Typography>
                         <Stack spacing={2} direction="row" alignItems="center">
                             <Button variant="contained" color="primary" onClick={handleYes} style={{ margin: '0.5rem' }}>
                                 Sí
@@ -44,7 +49,7 @@ const Logout = () => {
                 </>
             ) : (
                 <Stack spacing={2} direction="row" alignItems="center">
-                    <Typography variant="h3">
+                    <Typography variant="h4">
                         Sesión cerrada exitosamente
                     </Typography>
                     <CheckCircleIcon style={{ color: 'green', fontSize: '2rem' }} />

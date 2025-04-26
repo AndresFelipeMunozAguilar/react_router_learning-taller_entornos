@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography } from '@mui/material';
 
 const Providers = () => {
     const providersData = [
@@ -12,6 +12,9 @@ const Providers = () => {
 
     return (
         <div style={{ margin: '2rem' }}>
+            <Typography variant="h3" gutterBottom>
+                Proveedores
+            </Typography>
             <TableContainer component={Paper}>
                 <Table elevation={5}>
                     <TableHead>
