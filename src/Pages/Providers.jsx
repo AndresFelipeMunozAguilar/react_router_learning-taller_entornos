@@ -3,11 +3,11 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
 
 const Providers = () => {
     const providersData = [
-        { empresa: 'Tech Supplies', correo: 'contact@techsupplies.com', producto: 'Hardware', cantidad: 300, activo: true },
-        { empresa: 'Eco Goods', correo: 'info@ecogoods.com', producto: 'Recycled Materials', cantidad: 150, activo: false },
-        { empresa: 'Fresh Foods', correo: 'support@freshfoods.com', producto: 'Groceries', cantidad: 500, activo: true },
-        { empresa: 'Auto Gear', correo: 'sales@autogear.com', producto: 'Car Parts', cantidad: 100, activo: false },
-        { empresa: 'Style Trends', correo: 'hello@styletrends.com', producto: 'Fashion Accessories', cantidad: 250, activo: true },
+        { empresa: 'Tech Supplies', correo: 'contact@techsupplies.com', producto: 'Computer Hardware', cantidad: 300, activo: true },
+        { empresa: 'Eco Goods', correo: 'info@ecogoods.com', producto: 'Materiales Reciclados', cantidad: 150, activo: false },
+        { empresa: 'Fresh Foods', correo: 'support@freshfoods.com', producto: 'Comida', cantidad: 500, activo: true },
+        { empresa: 'Auto Gear', correo: 'sales@autogear.com', producto: 'Refacciones de automoviles', cantidad: 100, activo: false },
+        { empresa: 'Style Trends', correo: 'hello@styletrends.com', producto: 'Accessorios de belleza', cantidad: 250, activo: true },
     ];
 
     return (
