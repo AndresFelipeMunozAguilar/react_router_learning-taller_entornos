@@ -15,13 +15,14 @@ const Clients = () => {
         <div style={{ margin: '2rem' }}>
             <Grid container spacing={4}>
                 {clientsData.map((client, index) => (
-                    <Grid item xs={12} sm={6} md={4} key={index}>
+                    <Grid item size={{ xs: 12, sm: 6, md: 3 }} key={index}>
                         <Card>
                             <CardMedia
                                 component="img"
-                                height="150"
+                                height="200"
                                 image={client.imagen}
                                 alt={client.nombre}
+                                style={{ objectFit: 'contain' }}
                             />
                             <CardContent>
                                 <Typography variant="h6" component="div" gutterBottom>
